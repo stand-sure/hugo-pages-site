@@ -1,7 +1,8 @@
-baseURL = ''
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Stand Sure'
 theme = 'ananke'
+themesDir = 'themes'
 copyright = '2023 C.J. Anderson'
 relativeUrls = 'true'
 sectionPagesMenu = "main"
