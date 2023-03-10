@@ -1,0 +1,37 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Stand Sure'
+theme = 'ananke'
+copyright = '2023 C.J. Anderson'
+relativeUrls = 'true'
+sectionPagesMenu = "main"
+enableRobotsTXT = true
+
+[author]
+  name = 'C.J. Anderson'
+    
+[params]
+  AuthorName = 'C.J. Anderson'
+  GitHubUser = 'stand-sure'
+  SidebarRecentLimit = 5
+  [[params.meta]]
+    favicon = true
+  
+[permalinks]
+  posts = '/:year/:month/:title/'
+  
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+    
+[server]
+[[server.headers]]
+  for = '/**'
+  [server.headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self'; object-src 'none'"
+    Referrer-Policy = 'strict-origin-when-cross-origin'
+    X-Content-Type-Options = 'nosniff'
+    X-Frame-Options = 'DENY'
+    X-XSS-Protection = '1; mode=block'
