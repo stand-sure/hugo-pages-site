@@ -1,4 +1,4 @@
-baseURL = 'https://stand-sure.github.io/'
+baseURL = 'https://stand-sure.github.io/hugo-pages-site'
 languageCode = 'en-us'
 title = 'Stand Sure'
 theme = 'ananke'
