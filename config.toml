@@ -15,6 +15,7 @@ enableRobotsTXT = true
   AuthorName = 'C.J. Anderson'
   GitHubUser = 'stand-sure'
   SidebarRecentLimit = 5
+  custom_css = ["css/styles.css"]
   [[params.meta]]
     favicon = true
   
@@ -27,11 +28,14 @@ enableRobotsTXT = true
     ordered = false
     startLevel = 2
     
+[markup.goldmark.renderer]
+unsafe= true
+    
 [server]
 [[server.headers]]
   for = '/**'
   [server.headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self'; object-src 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; object-src 'none'"
     Referrer-Policy = 'strict-origin-when-cross-origin'
     X-Content-Type-Options = 'nosniff'
     X-Frame-Options = 'DENY'
