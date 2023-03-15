@@ -83,9 +83,11 @@ If the change is to some trait within the JWT payload and your app cares about i
 
 ## Solution: Envoy Filters
 
+The `authn` and `authz` concerns can be made separate from the application code by using filters in an Envoy rpoxy.
+
 [Envoy](https://www.envoyproxy.io/) is a high-performance FOSS (free open-source software) proxy.  It helps solve the networking and observability concerns that arise in microservice architectures.
 
-It is an out-of-process solution to the problems described above. In a k8s (kubernetes) environment, it is normally deployed as a sidecar with the app in a pod. If a service mesh is used (e.g. [Istio](https://istio.io/)) is used, Envoy is often configured via yaml `ConfigMap` files that are pushed to the control plane.
+It is an out-of-process solution to the problems described above. In a k8s (kubernetes) environment, it is normally deployed as a sidecar with the app in a pod. If a service mesh (e.g. [Istio](https://istio.io/)) is used, Envoy is often configured via yaml `ConfigMap` files that are pushed to the control plane.
 
 It is possible to design and test with Envoy locally before testing the code in a k8s environment with a tool like [Skaffold](https://skaffold.dev/) or [Telepresence](https://www.telepresence.io/).  For an example app, please see [stand-sure/keycloak-local-dev](https://github.com/stand-sure/keycloak-local-dev).
 
